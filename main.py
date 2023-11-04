@@ -19,6 +19,7 @@ url_cute = "https://cataas.com/cat/cute"
 async def send_welcome(message: types.Message):
 	await message.reply("Привет! Я - бот, который отправит тебе случайных котиков по команде\n/cat или /cutecat")
 
+
 @dp.message_handler(commands=['cat'])
 async def send_welcome(message: types.Message):
     r = requests.get(url)
@@ -30,7 +31,8 @@ async def send_welcome(message: types.Message):
     await message.reply_photo(photo, "Рандомный котик :)")
 
     os.remove(f"{id1}.jpg")
-    
+
+
 @dp.message_handler(commands=['cutecat'])
 async def send_welcome(message: types.Message):
     r = requests.get(url_cute)
