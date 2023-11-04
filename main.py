@@ -1,6 +1,5 @@
 import logging
 logging.basicConfig(level=logging.INFO)
-
 import requests
 from aiogram import Bot, Dispatcher, executor, types
 import time
@@ -35,6 +34,7 @@ async def send_welcome(message: types.Message):
 async def send_welcome(message: types.Message):
     r = requests.get(url_cute)
     id1 = message.chat.id
+	
     with open(f"{id1}.jpg", "wb") as f:
         f.write(r.content)
 	
