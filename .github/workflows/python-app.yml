@@ -29,4 +29,4 @@ jobs:
         pip install pip install aiogram==2.25.2 requests
     - name: Run
       run: |
-        python main.py
+        python main.py ${{ secrets.TOKEN }}
