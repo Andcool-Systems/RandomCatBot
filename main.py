@@ -7,9 +7,7 @@ import time
 import os
 import sys
 
-API_TOKEN = str(sys.argv[1])
-
-bot = Bot(token=API_TOKEN)
+bot = Bot(token=str(sys.argv[1]))
 dp = Dispatcher(bot)
 
 url = "https://cataas.com/cat"
