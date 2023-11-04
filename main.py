@@ -1,20 +1,13 @@
 import logging
 logging.basicConfig(level=logging.INFO)
-try: 
-	import replit
-	on_server = True
-except: on_server = False
-server_text = "replit" if on_server else "local"
-logging.info(f"Running on {server_text} server")
 
-
-if on_server: from background import keep_alive
 import requests
 from aiogram import Bot, Dispatcher, executor, types
 import time
 import os
+import sys
 
-API_TOKEN = 'YOUR-TOKEN-HERE'
+API_TOKEN = str(sys.argv[1])
 
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher(bot)
@@ -50,8 +43,6 @@ async def send_welcome(message: types.Message):
 
     os.remove(f"{id1}.jpg")
     
-
-if on_server: keep_alive()
 if __name__ == '__main__':
 	started = True
 	while started:
